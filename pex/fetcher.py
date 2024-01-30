@@ -32,6 +32,10 @@ else:
     BinaryIO = None
 
 
+# Fix for https://github.com/pantsbuild/pants/issues/20467
+ssl.create_default_context()
+
+
 @contextmanager
 def guard_stdout():
     # type: () -> Iterator[None]
